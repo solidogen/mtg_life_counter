@@ -4,6 +4,12 @@ import java.util.*
 
 object Versions {
     const val kotlin = "1.5.10"
+
+    const val compose = "1.0.0-beta09"
+    const val navCompose = "2.4.0-alpha04"
+    const val accompanist = "0.13.0"
+
+    const val activityCompose = "1.3.0-rc01"
     const val hilt = "2.36"
     const val junit = "4.13.2"
     const val timber = "4.7.1"
@@ -58,6 +64,19 @@ object JdkSettings {
     val targetCompatibility = JavaVersion.VERSION_1_8
     const val jvmTarget = "1.8"
 }
+
+object Compose {
+    const val ui = "androidx.compose.ui:ui:${Versions.compose}"
+    const val uiGraphics = "androidx.compose.ui:ui-graphics:${Versions.compose}"
+    const val uiTooling = "androidx.compose.ui:ui-tooling:${Versions.compose}"
+    const val foundationLayout = "androidx.compose.foundation:foundation-layout:${Versions.compose}"
+    const val activityCompose = "androidx.activity:activity-compose:${Versions.activityCompose}"
+    const val material = "androidx.compose.material:material:${Versions.compose}"
+    const val navigation = "androidx.navigation:navigation-compose:${Versions.navCompose}"
+    const val accompanistCoil = "com.google.accompanist:accompanist-coil:${Versions.accompanist}"
+    const val accompanistPlaceholder = "com.google.accompanist:accompanist-placeholder:${Versions.accompanist}"
+}
+
 
 object Ui {
     const val material = "com.google.android.material:material:${Versions.material}"

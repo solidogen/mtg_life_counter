@@ -4,17 +4,15 @@ plugins {
     id("kotlin-kapt")
     id("kotlin-parcelize")
     id("dagger.hilt.android.plugin")
-    id("com.google.gms.google-services")
-    id("com.google.firebase.crashlytics")
 }
 //apply(from="https://raw.githubusercontent.com/JakeWharton/SdkSearch/master/gradle/projectDependencyGraph.gradle")
 
 android {
-    compileSdkVersion(AndroidSettings.compileSdk)
+    compileSdk = AndroidSettings.compileSdk
     defaultConfig {
         applicationId = AndroidSettings.applicationId
-        minSdkVersion(AndroidSettings.minSdk)
-        targetSdkVersion(AndroidSettings.targetSdk)
+        minSdk = AndroidSettings.minSdk
+        targetSdk = AndroidSettings.targetSdk
         versionCode = AndroidSettings.versionCode
         versionName = AndroidSettings.versionName
         testInstrumentationRunner = AndroidSettings.testInstrumentationRunner
@@ -31,9 +29,10 @@ android {
     }
     buildFeatures {
         viewBinding = true
+        compose = true
     }
-    lintOptions {
-        isCheckReleaseBuilds = false
+    composeOptions {
+        kotlinCompilerExtensionVersion = Versions.compose
     }
 }
 
@@ -46,6 +45,16 @@ dependencies {
 
     implementation(Ui.material)
     implementation(Ui.constraintLayout)
+
+    implementation(Compose.ui)
+    implementation(Compose.uiGraphics)
+    implementation(Compose.uiTooling)
+    implementation(Compose.foundationLayout)
+    implementation(Compose.material)
+    implementation(Compose.navigation)
+    implementation(Compose.accompanistCoil)
+    implementation(Compose.accompanistPlaceholder)
+    implementation(Compose.activityCompose)
 
     implementation(Common.coreKtx)
     implementation(Common.appCompat)
